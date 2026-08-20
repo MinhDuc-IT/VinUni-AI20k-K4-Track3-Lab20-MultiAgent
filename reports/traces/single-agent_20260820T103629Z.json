@@ -1,0 +1,21 @@
+{
+  "run_name": "single-agent",
+  "exported_at": "20260820T103629Z",
+  "query": "Compare single-agent and multi-agent workflows for complex research tasks",
+  "route_history": [],
+  "iteration": 0,
+  "num_sources": 0,
+  "errors": [],
+  "trace": [
+    {
+      "name": "baseline",
+      "payload": {
+        "input_tokens": 45,
+        "output_tokens": 645,
+        "model": "openai/gpt-4o-mini"
+      }
+    }
+  ],
+  "agent_results": [],
+  "final_answer_preview": "When comparing single-agent and multi-agent workflows for complex research tasks, it is essential to understand the characteristics, advantages, and limitations of each approach. Below is a structured comparison:\n\n### Single-Agent Workflows\n\n**Definition**: A single-agent workflow involves one primary agent (individual or system) performing all tasks required to complete a research project.\n\n#### Characteristics:\n- **Centralized Control**: One agent manages the entire workflow.\n- **Sequential Ta"
+}

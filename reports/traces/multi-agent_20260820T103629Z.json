@@ -1,0 +1,146 @@
+{
+  "run_name": "multi-agent",
+  "exported_at": "20260820T103629Z",
+  "query": "Compare single-agent and multi-agent workflows for complex research tasks",
+  "route_history": [
+    "researcher",
+    "analyst",
+    "writer",
+    "done"
+  ],
+  "iteration": 4,
+  "num_sources": 5,
+  "errors": [],
+  "trace": [
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "researcher",
+        "iteration": 1,
+        "errors": []
+      }
+    },
+    {
+      "name": "researcher.done",
+      "payload": {
+        "num_sources": 5,
+        "input_tokens": 641,
+        "output_tokens": 403,
+        "duration_seconds": 7.026703300001827
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "analyst",
+        "iteration": 2,
+        "errors": []
+      }
+    },
+    {
+      "name": "analyst.done",
+      "payload": {
+        "input_tokens": 598,
+        "output_tokens": 587,
+        "duration_seconds": 7.975763800001005
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "writer",
+        "iteration": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "writer.done",
+      "payload": {
+        "input_tokens": 804,
+        "output_tokens": 612,
+        "duration_seconds": 7.269116600000416
+      }
+    },
+    {
+      "name": "supervisor.route",
+      "payload": {
+        "route": "done",
+        "iteration": 4,
+        "errors": []
+      }
+    },
+    {
+      "name": "workflow.done",
+      "payload": {
+        "route_history": [
+          "researcher",
+          "analyst",
+          "writer",
+          "done"
+        ],
+        "num_sources": 5,
+        "error_count": 0
+      }
+    }
+  ],
+  "agent_results": [
+    {
+      "agent": "supervisor",
+      "content": "researcher",
+      "metadata": {
+        "iteration": 1,
+        "route": "researcher"
+      }
+    },
+    {
+      "agent": "researcher",
+      "content": "### Research Notes: Single-Agent vs Multi-Agent Workflows for Complex Research Tasks\n\n1. **Evaluation Methodology**:\n   - When comparing single-agent and multi-agent workflows, it is crucial to assess both outcome quality (correctness of the final task) and process quality (how the result was produced and resilience to changes in prompts, tools, or task length) [1].\n\n2. **Comparison Matrix**:\n   - A comprehensive comparison should not simply determine which architecture is \"better,\" but should also identify specific task conditions. Single-agent approaches are generally more effective for short tasks with readily available evidence and low verification costs. In contrast, multi-agent systems are advantageous for tasks requiring diverse tools, independent evidence routes, long-running states, and specialized checks [2].\n\n3. **Architectural Considerations**:\n   - The choice between single-agent and multi-agent architectures involves considerations beyond the quality of the base language model. Factors include task decomposition, state retention, available tools, intermediate result verification, and failure recovery mechanisms [3].\n\n4. **Task Decomposition**:\n   - Effective task decomposition should be explicitly represented through interfaces or policies, rather than relying on implicit conversational cues. This approach aims to enhance source coverage, although it may introduce coordination overhead as a potential failure mode [4].\n\n5. **Implementation Patterns**:\n   - **Single-Agent Baseline**: This pattern is effective when task conditions align with its information flow. It requires clear specifications for entry conditions, expected artifacts, success criteria, and fallback strategies. It is also important to designate which agent holds the authoritative version of each artifact and the extent to which subsequent agents can modify or annotate it [5].\n   - **Planner-Researcher-Writer Pipeline**: This pattern is beneficial when task conditions align with its information flow, allowing for a structured approach to complex tasks [5].\n\nThese notes highlight the critical aspects of evaluating and implementing single-agent versus multi-agent workflows in complex research tasks, emphasizing the importance of task conditions and architectural choices.",
+      "metadata": {
+        "num_sources": 5,
+        "input_tokens": 641,
+        "output_tokens": 403
+      }
+    },
+    {
+      "agent": "supervisor",
+      "content": "analyst",
+      "metadata": {
+        "iteration": 2,
+        "route": "analyst"
+      }
+    },
+    {
+      "agent": "analyst",
+      "content": "### Structured Analysis: Single-Agent vs Multi-Agent Workflows for Complex Research Tasks\n\n#### 1) Key Claims\n- **Outcome Quality vs. Process Quality**: The evaluation of workflows should consider both the correctness of the final task (outcome quality) and the resilience and efficiency of the process (process quality) [1].\n- **Task Suitability**: Single-agent workflows are more effective for short tasks with low verification costs, while multi-agent systems excel in tasks requiring diverse tools and independent evidence routes [2].\n- **Architectural Considerations**: The choice between single-agent and multi-agent architectures is influenced by factors like task decomposition, state retention, and failure recovery mechanisms [3].\n- **Task Decomposition**: Effective task decomposition should be explicit, potentially increasing coordination overhead but enhancing source coverage [4].\n- **Implementation Patterns**: Specific implementation patterns, such as the Planner-Researcher-Writer pipeline, can optimize workflow effectiveness based on task conditions [5].\n\n#### 2) Supporting Evidence with Citations\n- **Evaluation Methodology**: The need to assess both outcome and process quality is emphasized as critical for a comprehensive comparison [1].\n- **Task Conditions**: The comparative analysis highlights that single-agent systems are suited for simpler tasks, while multi-agent systems are better for complex tasks requiring multiple tools and checks [2].\n- **Architectural Factors**: The importance of architectural considerations is noted, indicating that the choice of workflow architecture is not solely based on model quality but also on task-specific needs [3].\n- **Explicit Task Decomposition**: The recommendation for explicit representation of task decomposition is supported by the potential benefits in source coverage [4].\n- **Implementation Patterns**: The effectiveness of structured implementation patterns is discussed, suggesting that they can enhance workflow outcomes when aligned with task conditions [5].\n\n#### 3) Conflicting / Weak Evidence\n- **Generalization of Effectiveness**: The claim that single-agent systems are generally more effective for short tasks may not hold universally, as specific contexts or task types could yield different results. The evidence does not provide a clear boundary for what constitutes \"short tasks\" or \"low verification costs\" [2].\n- **Coordination Overhead**: While explicit task decomposition is suggested to enhance source coverage, the potential for increased coordination overhead is not quantified, leaving uncertainty about its impact on overall workflow efficiency [4].\n\n#### 4) Open Questions\n- What specific metrics can be used to quantify the resilience of single-agent versus multi-agent workflows in varying task conditions?\n- How do different types of tasks (e.g., exploratory vs. confirmatory) influence the effectiveness of single-agent versus multi-agent systems?\n- What are the best practices for managing coordination overhead in multi-agent systems, and how can they be minimized?\n- Are there specific domains or types of research tasks where one architecture consistently outperforms the other, and what are the underlying reasons?",
+      "metadata": {
+        "input_tokens": 598,
+        "output_tokens": 587
+      }
+    },
+    {
+      "agent": "supervisor",
+      "content": "writer",
+      "metadata": {
+        "iteration": 3,
+        "route": "writer"
+      }
+    },
+    {
+      "agent": "writer",
+      "content": "### Comparison of Single-Agent and Multi-Agent Workflows for Complex Research Tasks\n\nWhen evaluating workflows for complex research tasks, it is essential to understand the distinctions between single-agent and multi-agent systems. Each architecture presents unique advantages and challenges that can significantly impact the quality of outcomes and the efficiency of processes.\n\n#### 1. Outcome Quality vs. Process Quality\nThe effectiveness of a workflow should be assessed based on both outcome quality (the correctness of the final task) and process quality (the resilience and efficiency of the workflow) [1]. This dual focus ensures that the chosen architecture not only produces accurate results but also operates effectively under varying conditions.\n\n#### 2. Task Suitability\nSingle-agent workflows are generally more effective for short tasks with low verification costs. These tasks typically require less complexity and can be completed efficiently by a single agent without the need for extensive coordination. In contrast, multi-agent systems are better suited for complex tasks that necessitate the use of diverse tools and independent routes for evidence gathering [2]. This distinction highlights the importance of task characteristics in determining the appropriate workflow architecture.\n\n#### 3. Architectural Considerations\nThe choice between single-agent and multi-agent architectures is influenced by several factors, including task decomposition, state retention, and failure recovery mechanisms [3]. For instance, multi-agent systems may require more sophisticated coordination strategies to manage interactions among agents, which can introduce additional overhead.\n\n#### 4. Task Decomposition\nEffective task decomposition is crucial for optimizing workflow performance. Explicitly representing task decomposition can enhance source coverage, allowing for a more comprehensive approach to problem-solving. However, this explicitness may also lead to increased coordination overhead, which can affect overall efficiency [4]. Therefore, while task decomposition is beneficial, it must be managed carefully to avoid diminishing returns.\n\n#### 5. Implementation Patterns\nSpecific implementation patterns, such as the Planner-Researcher-Writer pipeline, can significantly enhance workflow effectiveness depending on the task conditions [5]. These structured approaches can streamline processes and improve collaboration among agents, particularly in multi-agent systems.\n\n### Conclusion\nIn summary, the choice between single-agent and multi-agent workflows for complex research tasks should be guided by the nature of the tasks, the required outcomes, and the architectural considerations involved. While single-agent systems excel in simpler, shorter tasks, multi-agent systems offer advantages in handling complexity and diversity in research tasks. Understanding these dynamics is essential for optimizing research workflows.\n\n### Sources\n[1] Single-Agent vs Multi-Agent Architectures for Complex Research Tasks: Evaluation methodology and metrics (local/offline)  \n[2] Single-Agent vs Multi-Agent Architectures for Complex Research Tasks: Comparative analysis and boundary conditions (local/offline)  \n[3] Single-Agent vs Multi-Agent Architectures for Complex Research Tasks: Conceptual overview and research framing (local/offline)  \n[4] Single-Agent vs Multi-Agent Architectures for Complex Research Tasks: Architecture and mechanisms (local/offline)  \n[5] Single-Agent vs Multi-Agent Architectures for Complex Research Tasks: Implementation patterns and anti-patterns (local/offline)",
+      "metadata": {
+        "input_tokens": 804,
+        "output_tokens": 612
+      }
+    },
+    {
+      "agent": "supervisor",
+      "content": "done",
+      "metadata": {
+        "iteration": 4,
+        "route": "done"
+      }
+    }
+  ],
+  "final_answer_preview": "### Comparison of Single-Agent and Multi-Agent Workflows for Complex Research Tasks\n\nWhen evaluating workflows for complex research tasks, it is essential to understand the distinctions between single-agent and multi-agent systems. Each architecture presents unique advantages and challenges that can significantly impact the quality of outcomes and the efficiency of processes.\n\n#### 1. Outcome Quality vs. Process Quality\nThe effectiveness of a workflow should be assessed based on both outcome qua"
+}

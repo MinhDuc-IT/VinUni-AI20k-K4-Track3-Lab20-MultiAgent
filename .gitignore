@@ -8,6 +8,7 @@ __pycache__/
 dist/
 build/
 *.egg-info/
-reports/*.json
-reports/*.md
-!.gitkeep
+# Keep lab deliverables tracked; ignore ad-hoc scratch files only.
+reports/scratch/
+!reports/benchmark_report.md
+!reports/traces/
